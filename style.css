@@ -1,0 +1,21 @@
+.container{
+    max-width:1170px; 
+    width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;   
+}
+.header__nav{
+    background-color: #0011ff;
+}
+.header__logo{
+    background-image: url(./img/logo.svg);
+    padding-right:360px;
+}
+.header__list{
+    list-style-type: none;
+    display: flex;
+}
+.header__link{
+    color: #fff;
+    padding-right:25px;
+}
