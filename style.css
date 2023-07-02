@@ -96,30 +96,29 @@ body {
 }
 .menu-btn {
   display: none;
-   padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 @media screen and (max-width: 992px) {
   .menu-btn {
-    display:block;
+    display: block;
   }
   .header__list {
     display: none;
     position: absolute;
-    top:63px;
-    right:-10px;
-    background-color:#2352de;
+    top: 63px;
+    right: -10px;
+    background-color: #2352de;
     padding: 30px;
     font-size: 24px;
     text-align: right;
-   
   }
-  .active{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
+  .active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 /*************************/
@@ -183,19 +182,45 @@ body {
   text-align: center;
 }
 
-.hero__works::after{
+.hero__works::after {
   content: "";
   animation-name: arrow;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-   background-image: url(./icons/arrow.svg);
-   background-repeat: no-repeat;
-   align-items: center;
-   z-index:2;
-  position: relative;;
-   display: block;
-   height:30px;
-   left:460px;
+  background-image: url(./icons/arrow.svg);
+  background-repeat: no-repeat;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  display: block;
+  height: 30px;
+  left: 460px;
+}
+.menu-btn{
+  display: block;
+  position: relative;
+}
+.menu-btn::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 7px;
+  top: 0;
+  right:0;
+  background-color: #000;
+  transition: transform 0.5s linear;
+  transform: rotate(180deg);
+}
+.menu-btn::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 7px;
+  top: 25px;
+  right: 0;
+  background-color: #000;
+  transition: transform 0.5s linear;
+  transform: rotate(180deg);
 }
 @keyframes arrow {
   0% {
@@ -208,10 +233,20 @@ body {
     top: 40px;
   }
 }
-@media screen and (max-width:768px) {
-  .hero__works::after{
-    left:0;
+@media screen and (max-width: 768px) {
+  .hero__works::after {
+    left: 0;
   }
+  .menu-btn {
+    background: transparent;
+    font-size: 0;
+    border: 0;
+  }
+  .hero__wrapper{
+    display: flex;
+    justify-content: center;
+  }
+
 }
 
 /**************************/
