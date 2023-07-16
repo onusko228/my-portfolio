@@ -91,17 +91,45 @@ body {
 .header__item {
   list-style: none;
 }
-.header__text {
+.header__link {
   color: white;
+}
+.header__text{
+  color:#fff;
 }
 .menu-btn {
   display: none;
   padding: 5px 10px;
 }
+.menu-btn::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 7px;
+  top: 0;
+  right: 0;
+  background-color: #000;
+  transition: transform 0.5s linear;
+  transform: rotate(180deg);
+}
+.menu-btn::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 7px;
+  top: 25px;
+  right: 0;
+  background-color: #000;
+  transition: transform 0.5s linear;
+  transform: rotate(180deg);
+}
 
 @media screen and (max-width: 992px) {
   .menu-btn {
-    display: block;
+    display: flex;
+    position: relative;
+    background-color: transparent;
+    border: none;
   }
   .header__list {
     display: none;
@@ -119,6 +147,12 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+  .menu-btn {
+    background: transparent;
+    font-size: 0;
+    border: 0;
+  }
+}
 
 /*************************/
 /***********hero**********/
@@ -194,35 +228,7 @@ body {
   position: absolute;
   display: block;
   height: 30px;
-  padding:5px 20px;
-}
-.menu-btn{
-  display: block;
-  position: relative;
-  background-color:transparent;
-  border:none;
-}
-.menu-btn::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 7px;
-  top: 0;
-  right:0;
-  background-color:#000;
-  transition: transform 0.5s linear;
-  transform: rotate(180deg);
-}
-.menu-btn::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 7px;
-  top: 25px;
-  right: 0;
-  background-color:#000;
-  transition: transform 0.5s linear;
-  transform: rotate(180deg);
+  padding: 5px 20px;
 }
 @keyframes arrow {
   0% {
@@ -236,21 +242,15 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
-  .menu-btn {
-    background: transparent;
-    font-size: 0;
-    border: 0;
-  }
-  .hero__wrapper{
+  .hero__wrapper {
     display: flex;
     justify-content: center;
   }
-
 }
-@media screen and (max-width:400px) {
-    .hero__subtitle{
-      font-size:55px;
-    }
+@media screen and (max-width: 400px) {
+  .hero__subtitle {
+    font-size: 55px;
+  }
 }
 
 /**************************/
@@ -598,7 +598,7 @@ body {
   height: 44px;
   top: 21px;
   left: 55px;
-  background-image: url(./icons/facebook\\(1\)\1svg);
+  background-image: url(./icons/facebook.svg);
   background-repeat: no-repeat;
 }
 .telegram {
