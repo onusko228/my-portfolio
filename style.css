@@ -304,6 +304,7 @@ body {
 }
 .skills__wrapper {
   display: flex;
+  flex-direction: column;
 }
 .skills-title {
   font-size: 18px;
@@ -415,6 +416,11 @@ body {
   font-size: 16px;
   line-height: 160%;
   color: #333333;
+}
+@media screen and (max-width:758px) {
+  .service__list {
+    gap:10px;
+  }
 }
 /**********************/
 /******portfolio*******/
